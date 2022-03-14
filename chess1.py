@@ -16,7 +16,7 @@ def findMoves(moves):
     for m, w, b in re.findall(r'(\d+)\.\s(\S+)\s+(\S+)', moves):
         print(f'{m} {w}, {b}')
 
-with open("c:\chess\game.pgn", "r") as fp:
+with open("game.pgn", "r") as fp:
     in_moves_data = False
     moves = ""
     for line in fp:
