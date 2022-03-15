@@ -11,7 +11,7 @@ class ChessGame:
         self.moves = game_moves
         
     def __str__(self):
-        return f"Game No:{self.number:5d}\nEvent:{self.event:20s}\nDate:{self.date:10s}\nWhite Player:{self.white:10s}\nBlack Player:{self.black:10s}\nGame Result:{self.result:10s}\nMoves:{self.moves}"
+        return f"Game No:{self.number:5d}\nEvent:{self.event:20s}\nDate:{self.date:10s}\nWhite Player:{self.white:10s}\nBlack Player:{self.black:10s}\nGame Result:{self.result:10s}\nMoves:{self.moves}\n"
 class Control:
     games_dict = {}
     def __init__(self):
@@ -41,8 +41,10 @@ class Control:
                 if j == 2:
                     j = 0
                     in_moves_data = False
+####  Προσθήκη λεξικού με moves στο games_dict
+                    moves_dict = Control.movesDict(moves)
                     Control.games_dict[no] = {'event':self.event,'date':self.date,'white':self.whitep.replace(",",""),
-                                                'black':self.black_player.replace(",",""),'result':self.res,'moves':moves}
+                                                'black':self.black_player.replace(",",""),'result':self.res,'moves':moves_dict}
                     no += 1
                     self.show_games()
                     moves = ""
@@ -60,6 +62,20 @@ class Control:
                     continue
                 if in_moves_data and j==1:
                     moves += line
+
+### Δημιουργία λεξικού απο κείμενο moves
+    def movesDict(self):
+        moves_dict = {}
+        for m, w, b in re.findall(r'(\d+)\.\s(\S+)\s+(\S+)', self): #Έυρεση κινήσεων
+            if b[0] in ('0','1'): #Αν η δεύτερη κίνηση είναι Result τότε μόνο η κίνηση των λευκών να καταγραφεί ως κίνηση
+                moves_dict[m] = [w]
+            else:
+                moves_dict[m] = [w, b]
+        for m, c in re.findall(r'(\d+)\.\s\S+\s+\S+\s\{(.+)\}', self):#Έυρεση σχολίων της κίνησης και προσθήκη στην συγκεκριμένη κίνηση
+            moves_dict[m] = moves_dict.get(m) + [c]
+        return(moves_dict)
+
+
+
 if __name__ == "__main__":
     Control()
-
