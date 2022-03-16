@@ -43,14 +43,14 @@ showBoard(board[0])
 addMoveToBoard(1, 'P', 'e2', 'e4')
 addMoveToBoard(2, 'p', 'e7', 'e5')
 
-print('#1 Move')
+print('Move #1')
 showBoard(board[1])
 
 #second move
 addMoveToBoard(3, 'N', 'g1', 'f3')
 addMoveToBoard(4, 'n', 'b8', 'c6')
 
-print('#2 Move')
+print('Move #2')
 showBoard(board[2])
 
 findCurrentPositions(board[2],"N")
