@@ -8,7 +8,7 @@ board = {0: {'a1': 'R', 'b1': 'N', 'c1': 'B', 'd1': 'Q', 'e1': 'K', 'f1': 'B',
 'a7': 'p', 'b7': 'p', 'c7': 'p', 'd7': 'p', 'e7': 'p', 'f7': 'p', 'g7': 'p', 'h7': 'p',
 'a8': 'r', 'b8': 'n', 'c8': 'b' , 'd8': 'q', 'e8': 'k', 'f8': 'b',
 'g8': 'n','h8': 'r'}}
-
+#neo sxolio
 #Εμφάνιση ταμπλό
 def showBoard(board):
     print(f"{board['a8']:1s} {board['b8']:1s} {board['c8']:1s} {board['d8']:1s} {board['e8']:1s} {board['f8']:1s} {board['g8']:1s} {board['h8']:1s}")
