@@ -1,25 +1,24 @@
 #Δημιουργία λεξικού με το ταμπλό της έναρξης - Κίνηση 0
-board = {0: {'a1': 'R', 'b1': 'N', 'c1': 'B', 'd1': 'Q', 'e1': 'K', 'f1': 'B',
-'g1': 'N', 'h1': 'R','a2': 'P', 'b2': 'P', 'c2': 'P', 'd2': 'P', 'e2': 'P',
-'f2': 'P', 'g2': 'P', 'h2': 'P', 'a3': '.', '3b': '.', 'c3': '.', 'd3': '.', 'e3': '.', 'f3': '.',
-'g3': '.', 'h3': '.', 'a4': '.', 'b4': '.', 'c4': '.', 'd4': '.', 'e4': '.', 'f4': '.', 'g4': '.', 'h4': '.',
-'a5': '.', 'b5': '.', 'c5': '.', 'd5': '.', 'e5': '.', 'f5': '.', 'g5': '.', 'h5': '.',
-'a6': '.', 'b6': '.', 'c6': '.', 'd6': '.', 'e6': '.', 'f6': '.', 'g6': '.', 'h6': '.',
-'a7': 'p', 'b7': 'p', 'c7': 'p', 'd7': 'p', 'e7': 'p', 'f7': 'p', 'g7': 'p', 'h7': 'p',
-'a8': 'r', 'b8': 'n', 'c8': 'b' , 'd8': 'q', 'e8': 'k', 'f8': 'b',
-'g8': 'n','h8': 'r'}}
+board = {0:{
+(1,1): 'R', (2,1): 'N', (3,1): 'B', (4,1): 'Q', (5,1): 'K', (6,1): 'B', (7,1): 'N', (8,1): 'R',
+(1,2): 'P', (2,2): 'P', (3,2): 'P', (4,2): 'P', (5,2): 'P', (6,2): 'P', (7,2): 'P', (8,2): 'P',
+(1,3): '.', (2,3): '.', (3,3): '.', (4,3): '.', (5,3): '.', (6,3): '.', (7,3): '.', (8,3): '.',
+(1,4): '.', (2,4): '.', (3,4): '.', (4,4): '.', (5,4): '.', (6,4): '.', (7,4): '.', (8,4): '.',
+(1,5): '.', (2,5): '.', (3,5): '.', (4,5): '.', (5,5): '.', (6,5): '.', (7,5): '.', (8,5): '.',
+(1,6): '.', (2,6): '.', (3,6): '.', (4,6): '.', (5,6): '.', (6,6): '.', (7,6): '.', (8,6): '.',
+(1,7): 'p', (2,7): 'p', (3,7): 'p', (4,7): 'p', (5,7): 'p', (6,7): 'p', (7,7): 'p', (8,7): 'p',
+(1,8): 'r', (2,8): 'n', (3,8): 'b', (4,8): 'q', (5,8): 'k', (6,8): 'b', (7,8): 'n', (8,8): 'r',
+}}
+
 #neo sxolio
 #Εμφάνιση ταμπλό
+print(board[0][(1,1)])
 def showBoard(board):
-    print(f"{board['a8']:1s} {board['b8']:1s} {board['c8']:1s} {board['d8']:1s} {board['e8']:1s} {board['f8']:1s} {board['g8']:1s} {board['h8']:1s}")
-    print(f"{board['a7']:1s} {board['b7']:1s} {board['c7']:1s} {board['d7']:1s} {board['e7']:1s} {board['f7']:1s} {board['g7']:1s} {board['h7']:1s}")
-    print(f"{board['a6']:1s} {board['b6']:1s} {board['c6']:1s} {board['d6']:1s} {board['e6']:1s} {board['f6']:1s} {board['g6']:1s} {board['h6']:1s}")
-    print(f"{board['a5']:1s} {board['b5']:1s} {board['c5']:1s} {board['d5']:1s} {board['e5']:1s} {board['f5']:1s} {board['g5']:1s} {board['h5']:1s}")
-    print(f"{board['a4']:1s} {board['b4']:1s} {board['c4']:1s} {board['d4']:1s} {board['e4']:1s} {board['f4']:1s} {board['g4']:1s} {board['h4']:1s}")
-    print(f"{board['a3']:1s} {board['3b']:1s} {board['c3']:1s} {board['d3']:1s} {board['e3']:1s} {board['f3']:1s} {board['g3']:1s} {board['h3']:1s}")
-    print(f"{board['a2']:1s} {board['b2']:1s} {board['c2']:1s} {board['d2']:1s} {board['e2']:1s} {board['f2']:1s} {board['g2']:1s} {board['h2']:1s}")    
-    print(f"{board['a1']:1s} {board['b1']:1s} {board['c1']:1s} {board['d1']:1s} {board['e1']:1s} {board['f1']:1s} {board['g1']:1s} {board['h1']:1s}")
-    print()
+    for r in range(1,9):
+        for f in range(1,9):
+            print(f"{board[f,r]:2s}", end='')
+        print('')
+    print('')
 
 #Προσθήκη στο λεξικό του ταμπλό της νέας κίνησης (υπολεξικό)
 def addMoveToBoard(move, piece, from_square, to_square):
@@ -40,15 +39,15 @@ print('Start Game')
 showBoard(board[0])
 
 #first move
-addMoveToBoard(1, 'P', 'e2', 'e4')
-addMoveToBoard(2, 'p', 'e7', 'e5')
+addMoveToBoard(1, 'P', (5,2), (5,4))
+addMoveToBoard(2, 'p', (5,7), (5,5))
 
 print('Move #1')
 showBoard(board[1])
 
 #second move
-addMoveToBoard(3, 'N', 'g1', 'f3')
-addMoveToBoard(4, 'n', 'b8', 'c6')
+addMoveToBoard(3, 'N', (7,1), (6,3))
+addMoveToBoard(4, 'n', (2,8), (3,6))
 
 print('Move #2')
 showBoard(board[2])
