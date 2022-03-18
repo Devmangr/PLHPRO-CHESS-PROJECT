@@ -32,8 +32,38 @@ def findCurrentPositions(board, check_piece):
         if piece == check_piece:
             positions.append(position)
     print(f'{check_piece} -> {positions}')
+    return(positions)
 
+def find_from_wking(move,to_square):
+    fr = findCurrentPositions(board[move-1],"K")
+    possible_pos = []
+    for y in range(fr[0][0]-1,fr[0][0]+2):
+        for x in range(fr[0][1]-1,fr[0][1]+2):
+            possible_pos.append((y,x))
+    if to_square in possible_pos:
+        print(f"White King was in {fr[0]}")
 
+def find_from_wrook(move,to_square):
+    fr = findCurrentPositions(board[move-1],"R")
+    possible_pos1 = []
+    for y in range(-7,8):
+        possible_pos1.append((y,fr[0][0]))
+    for x in range(-7,8):
+        possible_pos1.append((fr[0][0],x))
+
+    possible_pos2 = []
+    for y in range(-7,8):
+        possible_pos2.append((y,fr[1][0]))
+    for x in range(-7,8):
+        possible_pos2.append((fr[1][0],x))
+
+    if to_square in possible_pos1:
+        print(f"White Rook was in {fr[0]}")
+    elif to_square in possible_pos2:
+        print(f"White Rook was in {fr[1]}")
+       
+        
+        
 print('Start Game')
 showBoard(board[0])
 
@@ -51,7 +81,9 @@ addMoveToBoard(4, 'n', (2,8), (3,6))
 print('Move #2')
 showBoard(board[2])
 
-findCurrentPositions(board[2],"N")
+find_from_wking(4,(5,2))
+
+find_from_wrook(4,(1,3))
 
 
 
