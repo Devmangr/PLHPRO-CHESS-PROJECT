@@ -10,9 +10,8 @@ board = {0:{
 (1,8): 'r', (2,8): 'n', (3,8): 'b', (4,8): 'q', (5,8): 'k', (6,8): 'b', (7,8): 'n', (8,8): 'r',
 }}
 
-#neo sxolio
+
 #Εμφάνιση ταμπλό
-print(board[0][(1,1)])
 def showBoard(board):
     for r in range(1,9):
         for f in range(1,9):
