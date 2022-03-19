@@ -31,7 +31,7 @@ def findCurrentPositions(board, check_piece):
     for position, piece in board.items():
         if piece == check_piece:
             positions.append(position)
-    print(f'{check_piece} -> {positions}')
+    print(f'{check_piece} possible position/s -> {positions}')
     return(positions)
 
 def find_from_wking(move,to_square):
