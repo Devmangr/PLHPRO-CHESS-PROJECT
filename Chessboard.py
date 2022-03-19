@@ -13,7 +13,7 @@ board = {0:{
 
 #Εμφάνιση ταμπλό
 def showBoard(board):
-    for r in range(1,9):
+    for r in range(8,0,-1):
         for f in range(1,9):
             print(f"{board[f,r]:2s}", end='')
         print('')
