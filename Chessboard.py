@@ -13,9 +13,9 @@ board = {0:{
 
 #Εμφάνιση ταμπλό
 def showBoard(board):
-    for r in range(8,0,-1):
-        for f in range(1,9):
-            print(f"{board[f,r]:2s}", end='')
+    for rank in range(8,0,-1):
+        for file in range(1,9):
+            print(f"{board[file,rank]:2s}", end='')
         print('')
     print('')
 
