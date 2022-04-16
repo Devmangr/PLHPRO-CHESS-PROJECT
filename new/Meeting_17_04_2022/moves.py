@@ -21,7 +21,7 @@ def find_rank(piece, file):
 #SAN = Short Algebraic Notation
 #LAN = Long Algebraic Notation
 def san_to_lan(move, team, san):
-    lan = {}
+    lan = {}  # Παράδειγμα LAN λεξικού  { "p":"P", "f": "e2", "t": "e4" }, p for piece, f for from, t for to
     if san[0] in ('K', 'Q', 'R', 'B', 'N'):
         if team == 'w': lan['p'] = san[0]
         else: lan['p'] = san[0].lower()
@@ -54,8 +54,7 @@ def san_to_lan(move, team, san):
     else:
         lan['f'] = 'a1'
         lan['t'] = 'a3'
-    
-    return lan['f'] + lan['t']
+    return lan['f'] + lan['t'] # ΕΠΙΣΤΡΟΦΗ string με 4 χαρακτήρες 2 για το from και 2 για το to (π.χ. e2e4)
 
 
 #Εύρεση θέσης LAN σε ταμπλό
@@ -72,10 +71,7 @@ def find_pos(lan):
     
 #Μετατροπή LAN σε ταμπλό
 def convert_to_board(lan):
-    if len(moves_board) == 1:
-        movelist = list(map(list,moves_board[0].split('/')))
-    else:
-        movelist = list(map(list,moves_board[-1].split('/')))
+    movelist = list(map(list,moves_board[-1].split('/')))
     pfrom = find_pos(lan[:2])
     pto = find_pos(lan[2:])
     movelist[int(pto[0])][int(pto[1])] = movelist[int(pfrom[0])][int(pfrom[1])]

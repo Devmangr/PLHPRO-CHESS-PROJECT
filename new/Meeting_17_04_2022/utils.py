@@ -25,11 +25,12 @@ def games_in_pgn(fn):
         result = re.search(r"\[Result\s+(.*?)\]", game_txt).group(1)
         moves_txt= re.search(r"\]\s*(1.*)$", game_txt).group(1)
         moves = []
+        # ΠΡΟΣΘΗΚΗ ΑΡΧΙΚΟΥ ΤΑΜΠΛΟ ΣΤΗΝ ΛΙΣΤΑ ΜΕ ΤΑ ΤΑΜΠΛΟ
         boards = ['rnbqkbnr/pppppppp/......../......../......../......../PPPPPPPP/RNBQKBNR']
         for move, wsan, bsan in re.findall(r'(\d+)\.\s(\S+)\s+(\S+)', moves_txt):
             moves.append((move, wsan, bsan)) # οι κινήσεις ως τριάδες (αριθμός κίνησης, κίνηση λευκών, κίνηση μαύρων)
-            boards.append(move_to_board(move, 'w', wsan))
-            boards.append(move_to_board(move, 'b', bsan))
+            boards.append(move_to_board(move, 'w', wsan)) # ΠΡΟΣΘΗΚΗ ΤΑΜΠΛΟ ΜΕ ΤΗΝ ΚΙΝΗΣΗ ΤΩΝ ΛΕΥΚΩΝ
+            boards.append(move_to_board(move, 'b', bsan)) # ΠΡΟΣΘΗΚΗ ΤΑΜΠΛΟ ΜΕ ΤΗΝ ΚΙΝΗΣΗ ΤΩΝ ΜΑΥΡΩΝ
         game = PgnGame(event,white,black,result,moves,boards)
         games.append(game)
     return games

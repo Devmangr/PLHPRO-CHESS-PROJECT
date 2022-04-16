@@ -5,7 +5,7 @@ class PgnGame():
         self.black = black
         self.result = result
         self.moves = moves
-        self.boards = boards
+        self.boards = boards #ΠΡΟΣΘΗΚΗ ΟΛΩΝ ΤΩΝ ΤΑΜΠΛΟ
         
     def __str__(self):
         return f"{self.event} White: {self.white} Black: {self.black} Moves: {len(self.moves)} Result: {self.result}"

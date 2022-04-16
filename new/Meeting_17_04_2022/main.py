@@ -1,15 +1,6 @@
 from utils import list_of_pgns, games_in_pgn
 from moves import show_board
 
-def demo():
-    pgns = list_of_pgns("games")
-    sel = 1 # αριθμός αρχείου pgn που θα ανοίξει
-    games = games_in_pgn(pgns[sel])
-    sel = 1 # αριθμός παιχνιδιού μέσα στο pgn αρχείο
-    game = games[sel]
-    print("GAME: ",  game)
-    print("MOVES: ", game.moves)
-    
 def user_demo():
     pgns = list_of_pgns("games")
     print(pgns)
@@ -42,12 +33,7 @@ def user_demo():
         print(board)
         show_board(board)
         input("Press Enter to continue...")
-
-#    for m,w,b in game.moves:
-#        print(f"{m} move, white: {w}, black: {b}")
-#        input("Press Enter to continue...")
     
 if __name__=="__main__":
-    #demo()
     user_demo()  
     
