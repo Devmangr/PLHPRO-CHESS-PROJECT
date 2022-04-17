@@ -68,30 +68,30 @@ class GameBoard():
         y = (row * square_size) + int(square_size / 2)
 
         if piece == 'p':
-            self.image_to_place = tk.PhotoImage(file='C:/EAP/project/icons/b_pawn.png')
+            self.image_to_place = tk.PhotoImage(file='icons/b_pawn.png')
             #self.canvas.create_image(x,y, image=self.image_to_place_p, tags="piece" ,anchor="c")
         elif piece == 'r':
-            self.image_to_place = tk.PhotoImage(file='C:/EAP/project/icons/b_rook.png')
+            self.image_to_place = tk.PhotoImage(file='icons/b_rook.png')
         elif piece == 'n':
-            self.image_to_place = tk.PhotoImage(file='C:/EAP/project/icons/b_knight.png')
+            self.image_to_place = tk.PhotoImage(file='icons/b_knight.png')
         elif piece == 'b':
-            self.image_to_place = tk.PhotoImage(file='C:/EAP/project/icons/b_bishop.png')
+            self.image_to_place = tk.PhotoImage(file='icons/b_bishop.png')
         elif piece == 'q':
-            self.image_to_place = tk.PhotoImage(file='C:/EAP/project/icons/b_queen.png')
+            self.image_to_place = tk.PhotoImage(file='icons/b_queen.png')
         elif piece == 'k':
-            self.image_to_place = tk.PhotoImage(file='C:/EAP/project/icons/b_king.png')    
+            self.image_to_place = tk.PhotoImage(file='icons/b_king.png')    
         elif piece == 'P':
-            self.image_to_place = tk.PhotoImage(file='C:/EAP/project/icons/w_pawn.png')    
+            self.image_to_place = tk.PhotoImage(file='icons/w_pawn.png')    
         elif piece == 'R':
-            self.image_to_place = tk.PhotoImage(file='C:/EAP/project/icons/w_rook.png')
+            self.image_to_place = tk.PhotoImage(file='icons/w_rook.png')
         elif piece == 'N':
-            self.image_to_place = tk.PhotoImage(file='C:/EAP/project/icons/w_knight.png')   
+            self.image_to_place = tk.PhotoImage(file='icons/w_knight.png')   
         elif piece == 'B':
-            self.image_to_place = tk.PhotoImage(file='C:/EAP/project/icons/w_bishop.png')    
+            self.image_to_place = tk.PhotoImage(file='icons/w_bishop.png')    
         elif piece == 'Q':
-            self.image_to_place = tk.PhotoImage(file='C:/EAP/project/icons/w_queen.png')
+            self.image_to_place = tk.PhotoImage(file='icons/w_queen.png')
         elif piece == 'K':
-            self.image_to_place = tk.PhotoImage(file='C:/EAP/project/icons/w_king.png')  
+            self.image_to_place = tk.PhotoImage(file='icons/w_king.png')  
             
         if piece != '.':
             self.canvas.create_image(x,y, image=self.image_to_place, tags="piece" ,anchor="c")
